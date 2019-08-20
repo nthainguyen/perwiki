@@ -1,0 +1,31 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+<div class="container">
+<h1>Register Form</h1>
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <form action="" method="post" novalidate>
+            {{  form.hidden_tag()  }}
+            <p>
+                {{form.username.label}}<br>
+                {{form.username(size=32,class='form-control', placeholder='Insert your name here...')}}
+            </p>
+            <p>
+                {{form.password.label}}<br>
+                {{form.password(size=32,class='form-control', placeholder='Insert your Password here')}}
+            </p>
+            <p>
+                {{form.re_check.label}}<br>
+                {{form.re_check(size=32,class='form-control', placeholder='Please retype your password...')}}
+            </p>
+            <p>
+                {{form.email.label}}<br>
+                {{form.email(size=32,class='form-control', placeholder='Insert your email here...')}}
+            </p>
+            <p>{{ form.submit(class='btn btn-primary') }}</p>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}
