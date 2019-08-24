@@ -28,4 +28,6 @@ class RegisterFrom(FlaskForm):
             raise ValidationError('Please use a different email address.')
 
 class InputForm(FlaskForm):
+    entry_title = StringField('Wiki Entry', validators=[DataRequired()])
     entry = TextAreaField('Wiki Entry', validators=[DataRequired()])
+    submit = SubmitField('Submit')

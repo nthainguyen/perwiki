@@ -1,0 +1,22 @@
+
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Your personal wikipedia</h1>
+</div>
+        <form action="" method="post" novalidate>
+            {{  form.hidden_tag()  }}
+            <div class="col-md-4 col-lg-offset-4">
+                <p>
+                    {{  form.entry_title(size=32, class='form-control form', placeholder='Title of the entry')  }}
+                </p>
+                <p>
+                    {{ form.entry(size=32, class='form-control form', placeholder='Please type the entry here')}}
+                </p>
+                <p>
+                    {{  form.submit(class='btn btn-primary form-control')}}
+                </p>
+            </div>
+        </form>
+{% endblock %}

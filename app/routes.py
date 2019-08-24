@@ -4,7 +4,7 @@ from app import app, db
 
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
-from app.forms import RegisterFrom, LoginForm
+from app.forms import RegisterFrom, LoginForm, InputForm
 
 
 admin = Admin(app, name='WikiPersonal', template_mode='bootstrap3')
@@ -27,3 +27,9 @@ def Register():
 
 @app.route('/wiki', methods=['POST', 'GET'])
 def Wiki():
+    form = InputForm()
+    if form.validate_on_submit():
+        entry = Entry(entry_text=form.entry.data, entry_title=form.entry_title.data)
+        db.session.add(entry)
+        db.session.commit()
+    return render_template('wiki.html', form=form)
