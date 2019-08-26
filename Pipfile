@@ -14,6 +14,7 @@ flask-admin = "*"
 flask-login = "*"
 flask-security = "*"
 flask-bootstrap = "*"
+flask-nav = "*"
 
 [requires]
 python_version = "3.7"
